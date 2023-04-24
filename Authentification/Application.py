@@ -45,7 +45,7 @@ def count_files_and_dirs(path):
     dir_count = 0
     space_used = 0
     for root, dirs, files in os.walk(path):
-        for file in files:
+        for file in fileAuths:
             file_count += 1
             space_used += os.path.getsize(os.path.join(root, file))
         for dir in dirs:

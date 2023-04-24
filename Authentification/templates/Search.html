@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Résultats de la recherche pour "{{ query }}"</title>
+  </head>
+  <body>
+    <h1>Résultats de la recherche pour "{{ query }}"</h1>
+    {% if files_and_dirs %}
+      <ul>
+      {% for file_or_dir in files_and_dirs %}
+        <li>{{ file_or_dir.type }}: {{ file_or_dir.name | safe }}</li>
+      {% endfor %}
+      </ul>
+    {% else %}
+      <p>Aucun résultat trouvé pour "{{ query }}"</p>
+    {% endif %}
+  </body>
+</html>

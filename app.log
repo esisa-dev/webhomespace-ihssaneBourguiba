@@ -1,0 +1,89 @@
+Exception on /Authentification [POST]
+Traceback (most recent call last):
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/ihssane/github-classroom/esisa-dev/webhomespace-ihssaneBourguiba/Authentification/Authentification.py", line 62, in Authentification
+    session['username'] = username
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/sessions.py", line 98, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+User ihssane logged in
+User ihssane logged out
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged out
+User ihssane logged in
+Exception on /search [GET]
+Traceback (most recent call last):
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/ihssane/github-classroom/esisa-dev/webhomespace-ihssaneBourguiba/Authentification/Authentification.py", line 170, in search
+    if query in filename:
+TypeError: 'in <string>' requires string as left operand, not NoneType
+User ihssane logged in
+Exception on /Authentification [POST]
+Traceback (most recent call last):
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/ihssane/github-classroom/esisa-dev/webhomespace-ihssaneBourguiba/Authentification/Authentification.py", line 67, in Authentification
+    return render_template('Application.html')
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/templating.py", line 130, in _render
+    rv = template.render(context)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/ihssane/github-classroom/esisa-dev/webhomespace-ihssaneBourguiba/Authentification/templates/Application.html", line 32, in top-level template code
+    <form action="{{ url_for('search') }}" method="GET">
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 2034, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 2023, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+  File "/home/ihssane/.local/lib/python3.10/site-packages/werkzeug/routing/map.py", line 917, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'search'. Did you mean 'space' instead?
+User ihssane logged in
+Exception on /search [GET]
+Traceback (most recent call last):
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/ihssane/github-classroom/esisa-dev/webhomespace-ihssaneBourguiba/Authentification/Authentification.py", line 170, in search
+    if query in filename:
+TypeError: 'in <string>' requires string as left operand, not NoneType
+User ihssane logged in

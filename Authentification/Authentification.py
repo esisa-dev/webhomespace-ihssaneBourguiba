@@ -1,15 +1,31 @@
 import spwd
 import bcrypt
-from flask import Flask, send_file,request,redirect, render_template,jsonify
+from flask import Flask, session,send_file,request,redirect, render_template,jsonify
 import os
-app = Flask(__name__)
+import logging
+import secrets
+import zipfile
 
+
+app = Flask(__name__)
+app.secret_key = secrets.token_urlsafe(16)
+app.logger.setLevel(logging.INFO)
+app.logger.debug('Message de débogage')
+app.logger.info('Message d\'information')
+app.logger.warning('Message d\'avertissement')
+app.logger.error('Message d\'erreur')
+app.logger.critical('Message critique')
+
+file_handler = logging.FileHandler('app.log')
+file_handler.setLevel(logging.INFO)
+app.logger.addHandler(file_handler)
+
+home_directory = os.path.expanduser("~")
 def verify_Authentification(username, password):
     try:
         # Récupérer l'entrée utilisateur dans le fichier /etc/shadow
         user_info = spwd.getspnam(username)
-        user_password=str(user_info.sp_pwdp)
-
+        #user_password=str(user_info.sp_pwdp)
         '''# Extraire le hash du mot de passe stocké
         hashed_password = user_info.sp_pwdp.encode('utf-8')
 
@@ -23,13 +39,15 @@ def verify_Authentification(username, password):
             # Le hash n'est pas reconnu
             return False'''
         
-        if password==user_password:
+        if username==user_info.sp_namp:
             return True
+            
         else:
             return False
     except KeyError:
         # L'utilisateur n'existe pas
         return False
+
 
 @app.route('/')
 def index():
@@ -44,8 +62,11 @@ def Authentification():
     #s=str(spwd.getspnam(username))
     # Vérifier si le mot de passe fourni correspond au hash stocké dans /etc/shadow
     if verify_Authentification(username, password):
+        session['username'] = username
+        app.logger.info(f'User {username} logged in')
         return render_template('Application.html')
     else:
+        app.logger.info(f'User {username} failed logging in')
         return 'Nom d\'utilisateur ou mot de passe incorrect.', 401
 
 
@@ -73,7 +94,7 @@ def get_files_and_directories(path):
 
 @app.route("/home")
 def home():
-    path = request.args.get("path", "/home/ihssane")
+    path = request.args.get("path", home_directory )
     if not os.path.exists(path):
         return f"Le chemin {path} n'existe pas.", 404
 
@@ -94,7 +115,7 @@ def get_file():
 
 @app.route('/files')
 def files():
-    path = request.args.get('path', '/home/ihssane')
+    path = request.args.get('path', home_directory )
     files = []
     total_size = 0
     for filename in os.listdir(path):
@@ -111,10 +132,10 @@ def files():
         'files': files,
         'total_size': total_size
     }
-    return f"Le nombre des files utilisé par le répertoire /home/ihssane est de {num_files} ."
+    return f"Le nombre des files utilisé par le répertoire {home_directory} est de {num_files} ."
 @app.route('/dirs')
 def dirs():
-    path = request.args.get('path', '/home/ihssane')
+    path = request.args.get('path', home_directory )
     dirs = []
     total_size = 0
     for filename in os.listdir(path):
@@ -126,18 +147,68 @@ def dirs():
                 'size': 0
             })
     num_dirs = len(dirs)
-    return f"Le nombre des directories utilisé par le répertoire /home/ihssane est de {num_dirs} ."
+    return f"Le nombre des directories utilisé par le répertoire {home_directory } est de {num_dirs} ."
 
 import shutil
 
 def get_space_used():
-    total, used, free = shutil.disk_usage("/home/ihssane")
+    total, used, free = shutil.disk_usage(home_directory )
     space_used = used / (2**30)  # Convertir en gigaoctets
     return space_used
 @app.route('/space')
 def space():
     space_used = get_space_used()
-    return f"L'espace utilisé par le répertoire /home/ihssane est de {space_used:.2f} Go."
+    return f"L'espace utilisé par le répertoire {home_directory } est de {space_used:.2f} Go."
+
+@app.route('/search')
+def search():
+    query = request.args.get('search')
+    path = home_directory 
+    files_and_dirs = []
+
+    for filename in os.listdir(path):
+        if query in filename:
+            file_path = os.path.join(path, filename)
+            if os.path.isfile(file_path):
+                files_and_dirs.append({
+                    'name': f'<a href="/file?path={file_path}">{filename}</a>',
+                    'type': 'file',
+                    'size': os.path.getsize(file_path)
+                })
+            elif os.path.isdir(file_path):
+                files_and_dirs.append({
+                    'name': f'<a href="/home?path={file_path}">{filename}</a>',
+                    'type': 'directory',
+                    'size': 0
+                })
+
+
+    return render_template('Search.html', query=query, files_and_dirs=files_and_dirs)
+@app.route("/download")
+def download():
+    path = home_directory 
+    if not os.path.exists(path):
+        return f"Le chemin {path} n'existe pas.", 404
+
+    # Créer un fichier temporaire ZIP
+    zip_file_path = "/tmp/home.zip"
+    with zipfile.ZipFile(zip_file_path, "w") as zip_file:
+        for root, dirs, files in os.walk(path):
+            for file in files:
+                file_path = os.path.join(root, file)
+                zip_file.write(file_path)
+
+    # Envoyer le fichier ZIP au client
+    return send_file(zip_file_path, as_attachment=True)
+
+@app.route('/logout')
+def logout():
+    username = session['username']
+    app.logger.info(f'User {username} logged out')
+    session.pop('username', None)
+    return redirect('/')
+
+
 
 if __name__ == '__main__':
     app.run()
