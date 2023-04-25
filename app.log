@@ -1,0 +1,324 @@
+Exception on /Authentification [POST]
+Traceback (most recent call last):
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/ihssane/github-classroom/esisa-dev/webhomespace-ihssaneBourguiba/Authentification/Authentification.py", line 62, in Authentification
+    session['username'] = username
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/sessions.py", line 98, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+User ihssane logged in
+User ihssane logged out
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged out
+User ihssane logged in
+Exception on /search [GET]
+Traceback (most recent call last):
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/ihssane/github-classroom/esisa-dev/webhomespace-ihssaneBourguiba/Authentification/Authentification.py", line 170, in search
+    if query in filename:
+TypeError: 'in <string>' requires string as left operand, not NoneType
+User ihssane logged in
+Exception on /Authentification [POST]
+Traceback (most recent call last):
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/ihssane/github-classroom/esisa-dev/webhomespace-ihssaneBourguiba/Authentification/Authentification.py", line 67, in Authentification
+    return render_template('Application.html')
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/templating.py", line 130, in _render
+    rv = template.render(context)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/ihssane/github-classroom/esisa-dev/webhomespace-ihssaneBourguiba/Authentification/templates/Application.html", line 32, in top-level template code
+    <form action="{{ url_for('search') }}" method="GET">
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 2034, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 2023, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+  File "/home/ihssane/.local/lib/python3.10/site-packages/werkzeug/routing/map.py", line 917, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'search'. Did you mean 'space' instead?
+User ihssane logged in
+Exception on /search [GET]
+Traceback (most recent call last):
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/ihssane/github-classroom/esisa-dev/webhomespace-ihssaneBourguiba/Authentification/Authentification.py", line 170, in search
+    if query in filename:
+TypeError: 'in <string>' requires string as left operand, not NoneType
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+Exception on /download [GET]
+Traceback (most recent call last):
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/ihssane/github-classroom/esisa-dev/webhomespace-ihssaneBourguiba/Authentification/Authentification.py", line 200, in download
+    zip_file.write(file_path)
+  File "/usr/lib/python3.10/zipfile.py", line 1739, in write
+    zinfo = ZipInfo.from_file(filename, arcname,
+  File "/usr/lib/python3.10/zipfile.py", line 502, in from_file
+    st = os.stat(filename)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ihssane/snap/snap-store/638/.config/gtk-2.0/gtkfilechooser.ini'
+Exception on /download [GET]
+Traceback (most recent call last):
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/ihssane/github-classroom/esisa-dev/webhomespace-ihssaneBourguiba/Authentification/Authentification.py", line 200, in download
+    zip_file.write(file_path)
+  File "/usr/lib/python3.10/zipfile.py", line 1739, in write
+    zinfo = ZipInfo.from_file(filename, arcname,
+  File "/usr/lib/python3.10/zipfile.py", line 502, in from_file
+    st = os.stat(filename)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ihssane/snap/snap-store/638/.config/gtk-2.0/gtkfilechooser.ini'
+User ihssane logged in
+Exception on /download [GET]
+Traceback (most recent call last):
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/ihssane/github-classroom/esisa-dev/webhomespace-ihssaneBourguiba/Authentification/Authentification.py", line 200, in download
+    zip_file.write(file_path)
+  File "/usr/lib/python3.10/zipfile.py", line 1739, in write
+    zinfo = ZipInfo.from_file(filename, arcname,
+  File "/usr/lib/python3.10/zipfile.py", line 502, in from_file
+    st = os.stat(filename)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ihssane/snap/snap-store/638/.config/gtk-2.0/gtkfilechooser.ini'
+User ihssane logged in
+User ihssane logged out
+User ihssane logged in
+User ihssane logged out
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+Exception on /home [GET]
+Traceback (most recent call last):
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/ihssane/github-classroom/esisa-dev/webhomespace-ihssaneBourguiba/Authentification/Authentification.py", line 109, in home
+    if item['is_dir']:
+KeyError: 'is_dir'
+User ihssane logged in
+Exception on /home [GET]
+Traceback (most recent call last):
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/ihssane/github-classroom/esisa-dev/webhomespace-ihssaneBourguiba/Authentification/Authentification.py", line 108, in home
+    item_path = os.path.join(path, item)
+  File "/usr/lib/python3.10/posixpath.py", line 90, in join
+    genericpath._check_arg_types('join', a, *p)
+  File "/usr/lib/python3.10/genericpath.py", line 152, in _check_arg_types
+    raise TypeError(f'{funcname}() argument must be str, bytes, or '
+TypeError: join() argument must be str, bytes, or os.PathLike object, not 'dict'
+User ihssane logged in
+Exception on /Authentification [POST]
+Traceback (most recent call last):
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/ihssane/github-classroom/esisa-dev/webhomespace-ihssaneBourguiba/Authentification/Authentification.py", line 69, in Authentification
+    return render_template('Application.html')
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/templating.py", line 130, in _render
+    rv = template.render(context)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/ihssane/github-classroom/esisa-dev/webhomespace-ihssaneBourguiba/Authentification/templates/Application.html", line 93, in top-level template code
+    <button onclick="window.location.href='{{ url_for('files') }}'">Files</button>
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 2034, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 2023, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+  File "/home/ihssane/.local/lib/python3.10/site-packages/werkzeug/routing/map.py", line 917, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'files'. Did you mean 'dirs' instead?
+User ihssane logged in
+Exception on /home [GET]
+Traceback (most recent call last):
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/ihssane/github-classroom/esisa-dev/webhomespace-ihssaneBourguiba/Authentification/Authentification.py", line 97, in home
+    files_and_dirs = get_files_and_directories(path)
+  File "/home/ihssane/github-classroom/esisa-dev/webhomespace-ihssaneBourguiba/Authentification/Authentification.py", line 84, in get_files_and_directories
+    files_and_dirs.append({"name": item, "size": size, "type": type, "is_dir": os.path.isdir(item_path), "modified_time": time.ctime(os.path.getmtime(item_path))})
+NameError: name 'time' is not defined
+User ihssane logged in
+Exception on /home [GET]
+Traceback (most recent call last):
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/ihssane/github-classroom/esisa-dev/webhomespace-ihssaneBourguiba/Authentification/Authentification.py", line 99, in home
+    return render_template("Home.html", path=path, files_and_dirs=files_and_dirs, os=os)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/templating.py", line 130, in _render
+    rv = template.render(context)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/ihssane/github-classroom/esisa-dev/webhomespace-ihssaneBourguiba/Authentification/templates/Home.html", line 35, in top-level template code
+    <td>{{ file.stat.st_size }}</td>
+  File "/home/ihssane/.local/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'stat'
+User ihssane logged in
+Exception on /home [GET]
+Traceback (most recent call last):
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/ihssane/github-classroom/esisa-dev/webhomespace-ihssaneBourguiba/Authentification/Authentification.py", line 109, in home
+    return render_template("Home.html", path=path, files_and_dirs=files_and_dirs, os=os)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/templating.py", line 130, in _render
+    rv = template.render(context)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/ihssane/github-classroom/esisa-dev/webhomespace-ihssaneBourguiba/Authentification/templates/Home.html", line 35, in top-level template code
+    <td>{{ file.stat.st_size }}</td>
+  File "/home/ihssane/.local/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'stat'
+User ihssane logged in
+Exception on /home [GET]
+Traceback (most recent call last):
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/ihssane/github-classroom/esisa-dev/webhomespace-ihssaneBourguiba/Authentification/Authentification.py", line 109, in home
+    return render_template("Home.html", path=path, files_and_dirs=files_and_dirs, os=os)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/flask/templating.py", line 130, in _render
+    rv = template.render(context)
+  File "/home/ihssane/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ihssane/.local/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/ihssane/github-classroom/esisa-dev/webhomespace-ihssaneBourguiba/Authentification/templates/Home.html", line 35, in top-level template code
+    <td>{{ file.stat.st_size }}</td>
+  File "/home/ihssane/.local/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'stat'
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged in
+User ihssane logged out

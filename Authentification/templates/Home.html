@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Explorateur de fichiers</title>
+</head>
+<body>
+    <h1>Explorateur de fichiers</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Taille</th>
+                <th>Dossier</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if path != "/home/ihssane" %}
+                <tr>
+                    <td><a href="?path={{ os.path.dirname(path) }}">..</a></td>
+                    <td></td>
+                    <td>Return home</td>
+                </tr>
+            {% endif %}
+            {% for file in files_and_dirs %}
+                <tr>
+                    <td>
+                        {% if file.type == 'directory' %}
+                            <a href="?path={{ os.path.join(path, file.name) }}">{{ file.name }}/</a>
+                        {% else %}
+                            <a href="/file?path={{ os.path.join(path, file.name) }}">{{ file.name }}</a>
+                        {% endif %}
+                    </td>
+                    <td>{{ file.size }}</td>
+                    <td>{{ file.type }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
